@@ -8,7 +8,7 @@ RUN touch /usr/lib/jvm/java-8-openjdk-amd64/release
 
 # Install Scala
 RUN mkdir -p /home/user
-RUN addgroup -g 495 user 
+RUN addgroup --gid 495 user 
 RUN adduser -u 497 -g user user
 RUN \
   curl -fsL https://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C /home/user/ && \
