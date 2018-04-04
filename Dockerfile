@@ -22,11 +22,12 @@ RUN \
   dpkg -i sbt-$SBT_VERSION.deb && \
   rm sbt-$SBT_VERSION.deb && \
   apt-get update && \
-  apt-get install sbt && \
-  sbt sbtVersion
+  apt-get install sbt
 
 RUN chown -R user:user /home/user
 USER user
 
 # Define working directory
 WORKDIR /home/user
+
+RUN sbt sbtVersion
