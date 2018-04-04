@@ -1,8 +1,5 @@
 FROM openjdk:8u162
 
-ENV SCALA_VERSION 2.12.5
-ENV SBT_VERSION 1.1.2
-
 # Scala expects this file
 RUN touch /usr/lib/jvm/java-8-openjdk-amd64/release
 
@@ -10,6 +7,10 @@ RUN touch /usr/lib/jvm/java-8-openjdk-amd64/release
 RUN mkdir -p /home/user
 RUN addgroup --gid 495 user 
 RUN adduser -u 497 --gid user user
+
+ENV SCALA_VERSION 2.11.11
+ENV SBT_VERSION 1.0.4
+
 RUN \
   curl -fsL https://downloads.typesafe.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xfz - -C /home/user/ && \
   echo >> /home/user/.bashrc && \
