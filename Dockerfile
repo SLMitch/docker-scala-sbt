@@ -6,7 +6,7 @@ RUN touch /usr/lib/jvm/java-8-openjdk-amd64/release
 # Install Scala
 RUN mkdir -p /home/user
 RUN addgroup --gid 495 user 
-RUN adduser -u 497 --gid user user
+RUN adduser -u 497 --gid 495 user
 
 ENV SCALA_VERSION 2.11.11
 ENV SBT_VERSION 1.0.4
