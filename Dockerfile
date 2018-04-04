@@ -25,6 +25,7 @@ RUN \
   apt-get install sbt && \
   sbt sbtVersion
 
+RUN chown -R user:user /home/user
 USER user
 
 # Define working directory
